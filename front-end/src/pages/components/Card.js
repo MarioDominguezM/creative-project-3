@@ -6,7 +6,7 @@ class Card extends React.Component {
             <div>
                 <div className="card">
                     <img className="mario-pic"
-                    src="/gratitude/src/pages/components/images/mario.png"/>
+                    src="/gratitude/front-end/src/pages/components/images/mario.png"/>
                     <div className="card-container">
                         <h2>Mario Dominguez</h2>
                         <p className="card-title">Creator</p>

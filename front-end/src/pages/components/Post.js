@@ -4,7 +4,7 @@ class Post extends React.Component {
     render() {
         return (
             <div>
-                <div className="container" style={{ backgroundImage: "url(/gratitude/src/pages/components/images/" + this.props.picture + ")" }}>
+                <div className="container" style={{ backgroundImage: "url(/gratitude/front-end/src/pages/components/images/" + this.props.picture + ")" }}>
                    <di className="container-profile">
                         <div className="container-profile-text">
                              <p>{this.props.quote}</p>

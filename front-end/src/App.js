@@ -8,7 +8,7 @@ import Creator from "./pages/Creator";
 
 export default function App() {
   return (
-    <BrowserRouter basename="/gratitude/build">
+    <BrowserRouter basename="/gratitude/front-end/build">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Share />} />
