@@ -1,52 +1,63 @@
-import React from "react";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import setError from "./../Share";
 
-class Form extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            name: "",
-            quote: ""
+function Form(props) {
+    const [name, setName] = useState("");
+    const [sentence, setSentence] = useState("");
+    const [country, setCountry] = useState("");
+
+    const createPerson = async () => {
+        try {
+            await axios.post("/api/people", { name: name, sentence: sentence, 
+            country: country });
         }
-        this.handleChange = this.handleChange.bind(this)
+        catch (error) {
+            setError("error adding a person: " + error);
+        }
+    };
+
+    const addPerson = async (e) => {
+        e.preventDefault();
+        await createPerson();
+        setName("");
+        setSentence("");
+        setCountry("");
+        props.updatePeople();
     }
 
-    handleChange(event) {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
-
-    render() {
-        return (
-            <form>
-                <input
-                    type="text"
-                    value={this.state.name}
-                    id="name"
-                    name="name"
-                    placeholder="Name"
-                    onChange={this.handleChange}
-                /><br/>
-                <input
-                    type="text"
-                    value={this.state.quote}
-                    id="quote"
-                    name="quote"
-                    placeholder="Gratitude Sentence"
-                    onChange={this.handleChange}
-                /><br/>
-                <label for="picture">Select a file:</label>
-                <input 
-                    type="file"
-                    id="picture" 
-                    name="picture"
-                /><br/>
-                <input
-                    type="Submit"
-                />
-            </form>
-        )
-    }
+    return (
+        <form onSubmit={addPerson}>
+            <input
+                type="text"
+                value={name}
+                placeholder="Name"
+                onChange={e => setName(e.target.value)}
+            /><br/>
+            <input
+                type="text"
+                value={sentence}
+                placeholder="Gratitude Sentence"
+                onChange={e => setSentence(e.target.value)}
+            /><br/>
+            {/*<label for="picture">Select a file:</label>
+            <input 
+                type="file"
+                id="picture" 
+                name="picture"
+            /><br/>*/}
+            <input
+                type="text"
+                value={country}
+                placeholder="Valid country name"
+                onChange={e => setCountry(e.target.value)}
+            /><br/>
+            <input
+               type="submit"
+               value="Submit"
+            />
+        </form>
+    )
 }
 
 export default Form;

@@ -6,7 +6,7 @@ class Footer extends React.Component {
             <div>
                 <div className="footer">
                     <p><em>Gratitude Journal</em></p>
-                    <p><em><a href="https://github.com/MarioDominguezM/creative-project-3.git" target="_blank">Repository</a></em></p>
+                    <p><em><a href="https://github.com/MarioDominguezM/gratitude.git" target="_blank">Repository</a></em></p>
                 </div>
             </div>
         )

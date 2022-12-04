@@ -139,28 +139,29 @@ input {
     margin: 1% 1%;
 }
 
-#quote {
+#quote,
+.quote {
     padding: 5%;
     margin: 1% 1%;
 }
 
 .border-removed-input {
-  border: 0;
+    border: 0;
 }
 
 input[type=text] {
-  padding:10px;
-  border:0;
-  box-shadow:0 0 5px 1px rgba(0,0,0,0.06);
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.06);
 }
 
 .rounded-input {
-  padding:10px;
-  border-radius:10px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 input {
-  width:100%;
+    width: 100%;
 }
 
 .footer {
@@ -177,8 +178,9 @@ input {
 
 a {
     text-decoration: none;
-    color: black;
+    color: #000080;
 }
+
 a:hover {
     text-decoration: none;
     opacity: 0.7;
@@ -195,22 +197,50 @@ a:visited {
     color: black;
 }
 
+.close {
+    cursor: pointer;
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+    padding: 5px 5px;
+    transform: translate(0%, -50%);
+}
+
+.close:hover {
+    background: #bbb;
+}
+
+.countries {
+    margin: auto;
+    text-align: center;
+}
+
+.flag {
+    margin-bottom: 5%;
+}
+
+
 @media only screen and (min-width: 900px) {
     .navbar-nav {
         margin-left: auto !important;
         margin-right: 2%;
     }
-    
+
     body {
         margin-left: auto;
         margin-right: auto;
     }
-    
-    form {
+
+    form,
+    .quote {
         width: 50%;
     }
-    
-    .intro, .about, .card {
+
+    .intro,
+    .about,
+    .card,
+    .countries{
         width: 50%;
         margin-left: auto;
         margin-right: auto;
